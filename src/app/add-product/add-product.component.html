@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Add New Product</h2>
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm">
+      <div class="form-group">
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" class="form-control" [(ngModel)]="product.name" name="name" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" class="form-control" [(ngModel)]="product.quantity" name="quantity" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="cartonPrice">Carton Price:</label>
+        <input type="number" id="cartonPrice" class="form-control" [(ngModel)]="product.cartonPrice" name="cartonPrice" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="unitsPerCarton">Units Per Carton:</label>
+        <input type="number" id="unitsPerCarton" class="form-control" [(ngModel)]="product.unitsPerCarton" name="unitsPerCarton" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea id="description" class="form-control" [(ngModel)]="product.description" name="description"></textarea>
+      </div>
+  
+      <div class="form-group">
+        <label for="unitPriceMarkup">Unit Price Markup:</label>
+        <input type="number" id="unitPriceMarkup" class="form-control" [(ngModel)]="product.unitPriceMarkup" name="unitPriceMarkup" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="cartonDiscountPercentage">Carton Discount Percentage:</label>
+        <input type="number" id="cartonDiscountPercentage" class="form-control" [(ngModel)]="product.cartonDiscountPercentage" name="cartonDiscountPercentage" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="image">Product Image:</label>
+        <input type="file" id="image" (change)="onFileSelected($event)">
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!productForm.form.valid">Add Product</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,63 @@
+
+<div class="card">
+    <div class="card-header">
+        Product List
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4">
+                <button [routerLink]="['/add-product']" class="btn btn-success" style="margin-left: 10px;">
+                    Add
+                </button>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table" *ngIf="products.length">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Carton Price</th>
+                        <th>Units Per Carton</th>
+                        <th>Description</th>
+                        <th>Unit Price Markup(%)</th>
+                        <th>Carton Discount(%)</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let product of products">
+                        <td>
+                            <img  
+                            [src]="'data:image/jpeg;base64,' + product.image"
+                            [title]="product.name"
+                            alt="Product Image"
+                            style="width: 80px; height: 80px;"
+                          > 
+                        </td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{{ product.cartonPrice | currency : 'Rs. ' }}</td> 
+                        <td>{{ product.unitsPerCarton }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ product.unitPriceMarkup }}</td>
+                        <td>{{ product.cartonDiscountPercentage }}</td>
+                        <td>
+                            <button class="btn btn-secondary">
+                                View
+                            </button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger">
+                                Delete
+                            </button>
+                        </td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
