@@ -61,8 +61,8 @@
 |---------------|---------------------------------|----------------------------------------------------------------------|
 | Product List  | `/product-list`                 | Displays a table of all products from the database                    |
 | Add Product   | `/add-product`                  | Provides a form to add new products                                   |
-| Shop Now      | `/shop-now`                     | Shows product cards, allowing users to add products to the checkout   |
-| Checkout      | `/checkout`                     | Displays the total price based on selected products and quantities    |
+| Shop Now      | `/shop-now`                     | Shows product cards, allowing users to add products to the checkout , Displays the total price based on selected products and quantities   |
+
 
 ## Price Calculation Logic
 - **How the Price Engine Works**:
